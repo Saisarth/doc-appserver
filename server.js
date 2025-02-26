@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/prenatal_booking", {
+mongoose.connect("mongodb+srv://tsarath1368:SaiBs1368@doctorapp.sxnh4.mongodb.net/doc-app", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
