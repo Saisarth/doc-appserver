@@ -18,7 +18,7 @@ const App = () => {
   // Fetch Doctors List
   useEffect(() => {
     axios
-      .get("http://localhost:3004/doctors")
+      .get("https://doc-appserver.onrender.com//doctors")
       .then((res) => setDoctors(res.data))
       .catch((err) => console.error("Error fetching doctors:", err));
   }, []);
@@ -34,7 +34,7 @@ const App = () => {
     const formattedDate = moment(selectedDate).format("YYYY-MM-DD");
 
     axios
-      .get(`http://localhost:3004/doctors/${selectedDoctor}/slots?date=${formattedDate}`)
+      .get(`https://doc-appserver.onrender.com//doctors/${selectedDoctor}/slots?date=${formattedDate}`)
       .then((res) => setSlots(res.data))
       .catch((err) => console.error("Error fetching slots:", err))
       .finally(() => setLoading(false));
@@ -57,7 +57,7 @@ const App = () => {
     };
 
     axios
-      .post("http://localhost:3004/appointments", appointmentData)
+      .post("https://doc-appserver.onrender.com//appointments", appointmentData)
       .then(() => {
         setMessage("✅ Appointment booked successfully!");
         setSelectedSlot(""); // Reset slot after booking
